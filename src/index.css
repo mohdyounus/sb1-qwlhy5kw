@@ -1,0 +1,82 @@
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/700.css';
+@import '@fontsource/open-sans/400.css';
+@import '@fontsource/open-sans/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-nz-text bg-white;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+
+  h1 {
+    @apply text-h1 text-nz-blue;
+  }
+
+  h2 {
+    @apply text-h2 text-nz-green;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-nz-blue hover:bg-nz-blue-dark text-white font-semibold py-3 px-6 rounded-custom transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-nz-green hover:bg-nz-green-light text-white hover:text-nz-green font-semibold py-3 px-6 rounded-custom transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply text-nz-text hover:text-nz-blue transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-custom shadow-custom hover:shadow-lg transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-custom focus:outline-none focus:ring-2 focus:ring-nz-blue focus:border-transparent;
+  }
+
+  .select-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-custom focus:outline-none focus:ring-2 focus:ring-nz-blue focus:border-transparent bg-white;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 max-w-7xl;
+  }
+}
+
+.spinner {
+  @apply w-12 h-12 rounded-full border-4 border-gray-200;
+  border-top-color: theme('colors.nz-blue');
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-effect {
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
